@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ensibuuko.ambrose.gocheckout">
+
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_check_mark"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".About"
+            android:label="About Us"
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".PaymentSuccess" />
+        <activity android:name=".PaymentFailed" />
+        <activity android:name=".Payments.QRCodePay" android:label="QRCode Pay" />
+        <activity android:name=".Checkouts.ECommerceListings" android:label="Supported Stores" />
+        <activity android:name=".Checkouts.Cart" android:label="Current Cart"/>
+        <activity android:name=".Checkouts.BarcodeItemCheckout" android:label="Scan Item Barcode"></activity>
+    </application>
+
+</manifest>
